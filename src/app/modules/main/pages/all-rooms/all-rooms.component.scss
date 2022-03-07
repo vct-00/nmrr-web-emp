@@ -1,0 +1,15 @@
+.card-height {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  margin-left: 35px;
+  border-radius: 15px;
+}
+
+.card-height:hover {
+  color: white;
+  background-color: gray;
+  cursor: pointer;
+}

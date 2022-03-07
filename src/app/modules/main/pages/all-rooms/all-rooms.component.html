@@ -1,0 +1,9 @@
+<div>
+    <div class="row color">
+        <div *ngFor="let room of rooms" class="col-12 col-md-4 col-sm-12 card card-height mb-4" (click)="goToRoomDetails(room._id)">
+            <h5 class="card-title">{{room.name}}</h5>
+            <p class="card-text">{{room.description}}</p>
+            <!-- <p class="card-text">{{room.description}}</p> -->
+        </div>
+    </div>
+</div>

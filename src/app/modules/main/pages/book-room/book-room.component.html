@@ -1,0 +1,26 @@
+<form class="container p-5">
+  <h4>Enter booking details</h4>
+
+  <hr/>
+  
+  <!-- Start Date & Time -->
+  <div class="form-outline mb-4">
+    <input type="datetime-local" id="start" class="form-control"/>
+  </div>
+
+  <!-- Duration -->
+  <div class="form-outline mb-4">
+    <input type="text" id="duration" class="form-control" placeholder="Duration (minutes)" />
+  </div>
+
+  <!-- Notes -->
+  <textarea type="text" rows ="6" id="notes" class="form-control" placeholder="Notes"></textarea>
+  
+  <div class="text-center text-lg-start mt-4 pt-2">
+    <button type="button" class="btn btn-primary" (click)="saveBooking()"
+      style="padding-left: 2.5rem; padding-right: 2.5rem;">Save</button>
+      
+    <button type="button" class="btn btn-light" (click)="closeBooking()"
+      style="padding-left: 2.5rem; padding-right: 2.5rem;">Cancel</button>
+  </div>
+</form>
