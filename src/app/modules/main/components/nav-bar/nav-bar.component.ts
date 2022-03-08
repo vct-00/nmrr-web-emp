@@ -39,16 +39,10 @@ export class NavBarComponent implements OnInit {
         (reason) => {}
       );
     } else {
-      this.authSvc.logOut().subscribe(
-        (response) => {
-          localStorage.removeItem('Token');
-          this.router.navigate([`/`]);
-        },
-        (error: HttpErrorResponse) => {
-          console.log('logout failed');
-          //TODO: handle failed logout
-        }
-      );
+      this.authSvc.logOut().subscribe((response) => {
+        localStorage.removeItem('Token');
+        this.router.navigate([`/`]);
+      });
     }
   }
 

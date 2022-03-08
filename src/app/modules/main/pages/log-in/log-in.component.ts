@@ -29,7 +29,6 @@ export class LogInComponent implements OnInit {
         },
         (error: HttpErrorResponse) => {
           alert(error.error.message);
-          console.log(error);
         }
       );
   }
