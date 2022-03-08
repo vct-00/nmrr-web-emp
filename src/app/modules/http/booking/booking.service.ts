@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class BookingService {
-  business: string = environment.getBusiness();
+  business: string = environment.business;
 
   constructor(public http: HttpClient) {}
 
