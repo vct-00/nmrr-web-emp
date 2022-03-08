@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class RoomService {
-  business: string = environment.business;
+  business: string = environment.getBusiness();
 
   constructor(public http: HttpClient) {}
 
