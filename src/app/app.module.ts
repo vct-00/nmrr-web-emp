@@ -15,6 +15,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { FooterComponent } from './modules/main/components/footer/footer.component';
 import { NavBarModule } from './modules/main/components/nav-bar/nav-bar.module';
+import { MyBookingsModule } from './modules/main/pages/my-bookings/my-bookings.module';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent],
@@ -30,6 +31,7 @@ import { NavBarModule } from './modules/main/components/nav-bar/nav-bar.module';
     AllRoomsModule,
     MatProgressSpinnerModule,
     NavBarModule,
+    MyBookingsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

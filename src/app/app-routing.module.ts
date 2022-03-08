@@ -30,6 +30,13 @@ const routes: Routes = [
         (m) => m.LogInModule
       ),
   },
+  {
+    path: 'my-bookings',
+    loadChildren: () =>
+      import('./modules/main/pages/my-bookings/my-bookings.module').then(
+        (m) => m.MyBookingsModule
+      ),
+  },
 ];
 
 @NgModule({

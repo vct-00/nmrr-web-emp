@@ -57,4 +57,8 @@ export class NavBarComponent implements OnInit {
     this.userFullName = user ? user.firstName + ' ' + user.lastName : '';
     return localStorage.getItem('Token');
   }
+
+  goToOwnBookings() {
+    this.router.navigate([`/my-bookings`]);
+  }
 }

@@ -1,4 +1,14 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark px-5">
   <a class="navbar-brand col-11" href="#">Noaya</a>
-  <button class="col-1 btn btn-outline-light btn-sm" (click)="openLogInModal()">{{isLoggedIn? 'Log out': 'Log in'}}</button> 
+  <button *ngIf="!isLoggedIn" class="col-1 btn btn-outline-light btn-sm" (click)="openLogInModal()">Log in</button> 
+  
+  <div *ngIf="isLoggedIn" ngbDropdown class="col-1 dropdown">
+  <button ngbDropdownToggle class="btn btn-outline-light btn-sm" type="button" id="userMenu" aria-expanded="false">
+   {{userFullName}}
+  </button>
+      <ul ngbDropdownMenu aria-labelledby="userMenu">
+        <li><a ngbDropdownItem (click)="goToOwnBookings()">My Bookings</a></li>
+        <li><a ngbDropdownItem (click)="openLogInModal()">Log out</a></li>
+      </ul>
+    </div>
 </nav>

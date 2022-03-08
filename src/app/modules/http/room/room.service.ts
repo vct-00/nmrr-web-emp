@@ -13,6 +13,11 @@ export class RoomService {
   getAllRooms() {
     return this.http.get(this.business + '/rooms', this.getHeaders());
   }
+
+  getRoomDetails(roomId) {
+    return this.http.get(this.business + '/rooms/' + roomId, this.getHeaders());
+  }
+
   getHeaders() {
     const httpOptions = {
       headers: new HttpHeaders({

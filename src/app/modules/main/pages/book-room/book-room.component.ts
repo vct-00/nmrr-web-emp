@@ -24,12 +24,14 @@ export class BookRoomComponent implements OnInit {
       (<HTMLInputElement>document.getElementById('start')).value
     );
 
+    if (startDateTime < new Date()) {
+      return alert('Time invalid. Please set a valid booking schedule.');
+    }
+
     let duration = (<HTMLInputElement>document.getElementById('duration'))
       .value;
 
     let endDateTime = moment(startDateTime).add(duration, 'm').toDate();
-
-    console.log(startDateTime + ' - ' + endDateTime);
 
     //create booking object to save
     let booking = {
@@ -38,7 +40,7 @@ export class BookRoomComponent implements OnInit {
       startDate: startDateTime.getTime(),
       endDate: endDateTime.getTime(),
     };
-    console.log(booking);
+
     this.bookingSvc.addRoomBooking(booking).subscribe(
       () => {
         alert('Booking successful!');

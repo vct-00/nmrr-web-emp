@@ -28,8 +28,8 @@ export class LogInComponent implements OnInit {
           this.activeModal.close('success');
         },
         (error: HttpErrorResponse) => {
-          console.log('login failed');
-          //TODO: handle failed logout
+          alert(error.error.message);
+          console.log(error);
         }
       );
   }

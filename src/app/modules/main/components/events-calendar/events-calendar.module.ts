@@ -1,10 +1,6 @@
-import { EventsCalendarModule } from './../../components/events-calendar/events-calendar.module';
-import { PipesModule } from './../../../../shared/pipes/pipes.module';
+import { EventsCalendarComponent } from './events-calendar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { RoomDetailsRoutingModule } from './room-details-routing.module';
-import { RoomDetailsComponent } from './room-details.component';
 
 import { FormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
@@ -14,9 +10,6 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 @NgModule({
   imports: [
     CommonModule,
-    PipesModule,
-    EventsCalendarModule,
-    RoomDetailsRoutingModule,
     FormsModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
@@ -24,7 +17,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
       useFactory: adapterFactory,
     }),
   ],
-  declarations: [RoomDetailsComponent],
-  exports: [RoomDetailsComponent],
+  declarations: [EventsCalendarComponent],
+  exports: [EventsCalendarComponent],
 })
-export class RoomDetailsModule {}
+export class EventsCalendarModule {}

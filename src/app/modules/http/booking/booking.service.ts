@@ -17,9 +17,14 @@ export class BookingService {
     );
   }
 
-  addRoomBooking(data) {
-    console.log(this.getHeaders());
+  getUserRoomBookings(userId) {
+    return this.http.get(
+      this.business + '/bookings/user/' + userId,
+      this.getHeaders()
+    );
+  }
 
+  addRoomBooking(data) {
     return this.http.post(this.business + '/bookings', data, this.getHeaders());
   }
 
