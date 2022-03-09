@@ -1,7 +1,5 @@
-export const businessDomain = `localhost:49810`;
-
 export const environment = {
   production: false,
-  business: `http://${businessDomain}`,
+  business: `https://nmrr-api.herokuapp.com`,
   privacyPolicyUrl: 'http://localhost:4201',
 };
