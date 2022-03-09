@@ -4,8 +4,6 @@ import { LogInComponent } from './../../pages/log-in/log-in.component';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
-import { HttpErrorResponse } from '@angular/common/http';
-
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
