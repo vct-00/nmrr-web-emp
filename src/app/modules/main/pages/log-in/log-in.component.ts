@@ -23,7 +23,7 @@ export class LogInComponent implements OnInit {
         password: (<HTMLInputElement>document.getElementById('password')).value,
       })
       .subscribe(
-        (response) => {
+        (response: any) => {
           localStorage.setItem('Token', response['accessToken']);
           this.activeModal.close('success');
         },

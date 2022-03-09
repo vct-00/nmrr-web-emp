@@ -4,14 +4,16 @@ import { LogInComponent } from './../../pages/log-in/log-in.component';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  private modalRef;
-  public userFullName;
+  private modalRef: any;
+  public userFullName: string = '';
   constructor(
     private modal: NgbModal,
     private authSvc: AuthService,
@@ -29,12 +31,12 @@ export class NavBarComponent implements OnInit {
       });
 
       this.modalRef.result.then(
-        (result) => {
+        (result: string) => {
           if (result === 'success') {
             //TODO: do something here if successful:log in
           }
         },
-        (reason) => {}
+        (reason: any) => {}
       );
     } else {
       this.authSvc.logOut().subscribe((response) => {
@@ -45,7 +47,7 @@ export class NavBarComponent implements OnInit {
   }
 
   get isLoggedIn() {
-    const user = this.decode.transform(localStorage.getItem('Token'));
+    const user = this.decode.transform(localStorage.getItem('Token') as string);
     this.userFullName = user ? user.firstName + ' ' + user.lastName : '';
     return localStorage.getItem('Token');
   }

@@ -7,10 +7,9 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
   business: string = environment.business;
-  public token;
   constructor(public http: HttpClient) {}
 
-  logIn(data) {
+  logIn(data: any) {
     return this.http.post(this.business + '/login', data, this.getHeaders());
   }
 

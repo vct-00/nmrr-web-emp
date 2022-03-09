@@ -21,7 +21,7 @@ export class RoomDetailsComponent implements OnInit {
   public roomBookings: any = [];
   public parentName = 'RoomDetailsComponent';
   public isLoaded = false;
-  private params;
+  private params: any;
   private modalRef: any;
 
   constructor(
@@ -54,7 +54,7 @@ export class RoomDetailsComponent implements OnInit {
       : BookRoomComponent;
     this.modalRef = this.openPopUp(componentToOpen);
 
-    this.modalRef.result.then((result) => {
+    this.modalRef.result.then((result: any) => {
       if (result === 'success') {
         if (componentToOpen === LogInComponent) {
           this.modalRef = this.openPopUp(BookRoomComponent);
@@ -65,7 +65,7 @@ export class RoomDetailsComponent implements OnInit {
     });
   }
 
-  openPopUp(component) {
+  openPopUp(component: any) {
     let modalToOpen = this.modal.open(component, {
       size: 'lg',
       centered: true,

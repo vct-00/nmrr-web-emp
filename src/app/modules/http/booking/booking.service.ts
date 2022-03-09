@@ -10,21 +10,21 @@ export class BookingService {
 
   constructor(public http: HttpClient) {}
 
-  getRoomBookings(roomId) {
+  getRoomBookings(roomId: string) {
     return this.http.get(
       this.business + '/bookings/room/' + roomId,
       this.getHeaders()
     );
   }
 
-  getUserRoomBookings(userId) {
+  getUserRoomBookings(userId: string) {
     return this.http.get(
       this.business + '/bookings/user/' + userId,
       this.getHeaders()
     );
   }
 
-  addRoomBooking(data) {
+  addRoomBooking(data: any) {
     return this.http.post(this.business + '/bookings', data, this.getHeaders());
   }
 

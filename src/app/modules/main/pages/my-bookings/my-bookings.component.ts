@@ -19,7 +19,7 @@ export class MyBookingsComponent implements OnInit {
   ngOnInit(): void {
     this.bookingSvc
       .getUserRoomBookings(
-        this.decode.transform(localStorage.getItem('Token'))._id
+        this.decode.transform(localStorage.getItem('Token') as string)._id
       )
       .subscribe((res) => {
         if (res) {

@@ -10,7 +10,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./book-room.component.scss'],
 })
 export class BookRoomComponent implements OnInit {
-  @Input() public roomId;
+  @Input() public roomId: string = '';
   constructor(
     public activeModal: NgbActiveModal,
     public bookingSvc: BookingService

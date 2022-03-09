@@ -33,8 +33,8 @@ const colors: any = {
 })
 export class EventsCalendarComponent implements OnInit {
   @Input() roomBookings: any[] = [];
-  @Input() parentName: string;
-  @Input() roomId: string;
+  @Input() parentName: string = '';
+  @Input() roomId: string = '';
   events: CalendarEvent[] = [];
 
   constructor(private decode: DecodeTokenPipe, private roomSvc: RoomService) {}
@@ -97,11 +97,13 @@ export class EventsCalendarComponent implements OnInit {
 
   // #region Helper Methods
 
-  createCalendarEvent(roomBooking) {
+  createCalendarEvent(roomBooking: any) {
     let userId = '';
 
     if (this.isLoggedIn) {
-      userId = this.decode.transform(localStorage.getItem('Token'))._id;
+      userId = this.decode.transform(
+        localStorage.getItem('Token') as string
+      )._id;
     }
 
     let event: CalendarEvent = {
@@ -118,9 +120,9 @@ export class EventsCalendarComponent implements OnInit {
 
     //#region Update Event Title
     let postFixTitle = ' - ' + roomBooking.notes;
-    if (this.parentName == 'RoomDetailsComponent') {
+    if (!this.isMyBookingParent) {
       event.title = roomBooking.name + postFixTitle;
-    } else if (this.parentName == 'MyBookingsComponent') {
+    } else {
       this.roomSvc.getRoomDetails(roomBooking.roomId).subscribe((res: any) => {
         event.title = res.room.name + postFixTitle;
       });

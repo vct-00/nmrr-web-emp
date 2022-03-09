@@ -14,7 +14,7 @@ export class RoomService {
     return this.http.get(this.business + '/rooms', this.getHeaders());
   }
 
-  getRoomDetails(roomId) {
+  getRoomDetails(roomId: string) {
     return this.http.get(this.business + '/rooms/' + roomId, this.getHeaders());
   }
 
