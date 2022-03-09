@@ -98,10 +98,10 @@ export class EventsCalendarComponent implements OnInit {
   // #region Helper Methods
 
   createCalendarEvent(roomBooking) {
-    let user;
+    let userId = '';
 
     if (this.isLoggedIn) {
-      user = this.decode.transform(localStorage.getItem('Token'));
+      userId = this.decode.transform(localStorage.getItem('Token'))._id;
     }
 
     let event: CalendarEvent = {
@@ -113,7 +113,7 @@ export class EventsCalendarComponent implements OnInit {
       },
       draggable: true,
       title: '',
-      color: roomBooking.userId == user._id ? colors.blue : colors.yellow,
+      color: roomBooking.userId == userId ? colors.blue : colors.yellow,
     };
 
     //#region Update Event Title
